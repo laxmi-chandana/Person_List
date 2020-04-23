@@ -2,24 +2,28 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const Person = ({img, name, job, children}) => (
+    <article className = "person">
+      <img src= {`https://randomuser.me/api/portraits/thumb/men/${img}.jpg`} alt ="person"/>
+      <h4>{name}</h4>
+      <h4>{job}</h4>
+      {children}
+    </article>
+)
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <section className = "person-list">
+      <Person img = "54" name ="David" job = "Software"/>
+      <Person img ="55" name ="John" job = "Pune"/>
+      <Person img = "56" name = "Alice" job = "Teacher">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores,
+          tempora!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </Person>
+
+    </section>
   );
 }
 
